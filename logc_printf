@@ -1,0 +1,9 @@
+man 3 stdarg
+
+va_arg	-	creates list of the args (probably in struct)
+			inside va_list
+va_copy	-	copies list from src to dest
+
+va_arg	-	checks type of result of va_copy
+				if fail return 0?
+va_end	-	finished with current arg
