@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 17:16:09 by wfung             #+#    #+#             */
-/*   Updated: 2017/04/24 19:08:58 by wfung            ###   ########.fr       */
+/*   Created: 2017/04/24 16:55:53 by wfung             #+#    #+#             */
+/*   Updated: 2017/04/24 17:09:26 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+void	printf_int(long n)
 {
-	va_list args;
-	va_start(args, format);
+	long	buff;
 
-	while (*format != '\0')
-	{
-		va_start();
-		va_arg();
-		va_copy();
-		*format++;
-	}
-	va_end();
-	return (1);
+	if (n > 2147483647 || n < -2147483648)
+		return ;
+	buff = ft_itoa(n);
+	ft_putstr(buff);	
+	free(buff);
 }

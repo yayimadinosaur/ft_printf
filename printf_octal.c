@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf_octal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/19 17:16:09 by wfung             #+#    #+#             */
-/*   Updated: 2017/04/24 19:08:58 by wfung            ###   ########.fr       */
+/*   Created: 2017/04/24 17:34:40 by wfung             #+#    #+#             */
+/*   Updated: 2017/04/24 17:43:38 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+void	printf_octal(int n)
 {
-	va_list args;
-	va_start(args, format);
+	int		i;
+	int		octal_num;
 
-	while (*format != '\0')
+	i = 1;
+	octal_num = 0;
+	while (buff != 0)
 	{
-		va_start();
-		va_arg();
-		va_copy();
-		*format++;
+		octal_num = (n % 8) * i;
+		n = n / 8;
+		i = i * 10;
 	}
-	va_end();
-	return (1);
+	ft_putstr(ft_itoa(n));
+	return ;
 }
