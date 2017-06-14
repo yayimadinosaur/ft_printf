@@ -23,4 +23,4 @@ You have to recode the libc’s printf function.
 • You must manage the flags hh, h, l, ll, j, et z.
 
 //notes from making ft_printf
-//for int param, if its not <= # of params, will print garbage value (because no param to refer to)
+//for int param, if its not <= # of params (negatives results in 0), will print garbage value (because no param to refer to)
