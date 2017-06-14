@@ -6,7 +6,7 @@
 #    By: wfung <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/19 17:34:46 by wfung             #+#    #+#              #
-#    Updated: 2017/04/19 17:35:04 by wfung            ###   ########.fr        #
+#    Updated: 2017/06/14 15:49:34 by wfung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ CC		=	gcc
 FLAG	=	-Wall -Wextra -Werror
 
 SRCS	= 	main.c \
-			ft_printf.c
 	   		
 OBJ =		${SRCS:.c=.o}
 
