@@ -6,12 +6,13 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:50:51 by wfung             #+#    #+#             */
-/*   Updated: 2017/04/19 18:16:37 by wfung            ###   ########.fr       */
+/*   Updated: 2017/06/14 09:16:30 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*
 int		main(int ac, char **av)
 {
 	int		i;
@@ -34,5 +35,31 @@ int		main(int ac, char **av)
 			i++;
 		}
 	}
+	return (0);
+}
+*/
+
+int		sumnum(int num, ...)
+{
+	int sum = 0;
+	va_list argptr;
+	int	count = 0;
+	va_start(argptr, num);
+	while(count < num)
+	{
+		sum += va_arg(argptr, int);
+		printf("count = [%d] sum now = %d\n", count, sum);
+		count++;
+	}
+	va_end(argptr);
+	return (sum);
+}
+
+int		main(void)
+{
+	int	total;
+
+	total = sumnum(6, 1, 2, 3, 4, 5);
+	printf("total = %d\n", total);
 	return (0);
 }
