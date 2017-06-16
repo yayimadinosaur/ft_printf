@@ -6,10 +6,11 @@
 #    By: wfung <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/19 17:34:46 by wfung             #+#    #+#              #
-#    Updated: 2017/06/14 15:49:34 by wfung            ###   ########.fr        #
+#    Updated: 2017/06/15 17:57:23 by wfung            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#make a library instead of an executable since ft_printf is a function
 NAME	=	ft_printf
 
 CC		=	gcc
