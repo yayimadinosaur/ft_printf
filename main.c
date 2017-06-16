@@ -6,7 +6,7 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/19 17:50:51 by wfung             #+#    #+#             */
-/*   Updated: 2017/06/14 12:42:10 by wfung            ###   ########.fr       */
+/*   Updated: 2017/06/15 17:27:26 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		sumnum(int num, ...)
 	va_list argptr;
 	int	count = 0;
 	va_start(argptr, num);
-	while(count < num)
+	while (count < num)
 	{
 		sum += va_arg(argptr, int);
 		printf("count = [%d] sum now = %d\n", count, sum);
@@ -59,7 +59,7 @@ int		main(void)
 {
 	int	total;
 
-	total = sumnum(-999, 1, 2, 3, 4, 5);
+	total = sumnum(6, 1, 2, 3, 4, 5);
 	printf("total = %d\n", total);
 //	printf("%100c\n", 5);
 	return (0);
