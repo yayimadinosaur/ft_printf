@@ -6,31 +6,48 @@
 /*   By: wfung <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 12:37:19 by wfung             #+#    #+#             */
-/*   Updated: 2017/06/14 16:35:00 by wfung            ###   ########.fr       */
+/*   Updated: 2017/06/20 18:59:58 by wfung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		count_percent(char *str)
+int		chk_flags(char *str)
 {
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (str[i] == '%')
-		{
-			j++;
-			if (j == 1)
-			{
-				if (str[i + 1] == 's' || str[i + 1] == 'S' || str[i + 1] == 'p' || str[i + 1] == 'd' || str[i + 1] == 'D' || str[i + 1] == 'i' || str[i + 1] == 'o' || str[i + 1] == 'O' || str[i + 1] == 'u' || str[i + 1] == 'U' || str[i + 1] == 'x' || str[i + 1] == 'X' || str[i + 1] == 'c' || str[i + 1] == 'C')
-					j++;
-			}
-		}
 		i++;
 	}
-	return (j);
+	return (0);
+}
+
+int		count_percent(char *str)
+{
+	int		count;
+	int		total;
+	
+	count = 0;
+	while (*str)
+	{
+		count = 0;
+		if (*str == '%')
+		{
+			count++;
+			if (count == 1)
+			{
+				if (chk_flags(*str) == 1)
+				{
+					store_result();		//store result in struct?
+					total++;
+				}
+				else
+					ft_putstr();		// no flags = print entire str
+			}
+		}
+		str++;
+	}
+	return (count);
 }
